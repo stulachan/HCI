@@ -251,7 +251,7 @@ and open the template in the editor.
   <label class="col-md-4 control-label">Select File</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group"> 
-<div class="g-recaptcha" data-sitekey="6Leoug8UAAAAAAf2OZV2UKQQ_PjfspycZXoJgirH"></div>
+<div class="g-recaptcha" data-sitekey="6LfCvA8UAAAAAOJIAM8SMgWwc-IXneT6j-QndcpM"></div>
       </div>
     </div>
 </div>
