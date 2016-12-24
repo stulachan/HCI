@@ -221,8 +221,6 @@ and open the template in the editor.
 </div>
 </div>
 
-
-
 <!-- Text area -->
 
 <div class="form-group">
@@ -245,10 +243,24 @@ and open the template in the editor.
         </div>
     </div>
 </div>
+
+<!-- Text area -->
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+    <div class="col-md-4 inputGroupContainer">
+    
+    <div class="input-group"> 
+       <input type="checkbox" name="agree" value="agree"/> Agree with the terms and conditions
+   
+    </div>
+    </div>
+</div>
         
 <!-- -->
 <div class="form-group">
-  <label class="col-md-4 control-label">Select File</label>
+  <label class="col-md-4 control-label">Verification</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group"> 
 <div class="g-recaptcha" data-sitekey="6LfCvA8UAAAAAOJIAM8SMgWwc-IXneT6j-QndcpM"></div>
@@ -361,6 +373,12 @@ and open the template in the editor.
                         country: 'US',
                         message: 'Please supply a vaild zip code'
                     }
+                }
+            },
+               agree: {
+                validators: {
+                    notEmpty: { message: 'You must agree with the terms and conditions'},
+                    
                 }
             },
             comment: {
