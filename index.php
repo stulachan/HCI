@@ -7,30 +7,35 @@ and open the template in the editor.
 
 <html>
 <head>
-a
+
 <meta charset="UTF-8">
-
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
-
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+ <!-- Include Bootstrap Datepicker -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+
 </head>
-
-
 <body>
-
+    
 <div class="container">
 
-    <form class="well form-horizontal" id="contact_form" action="output.php" method="post">
+<form class="well form-horizontal" id="contact_form" action="output.php" method="post">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form</legend>
-
-<!-- Text input-->
-
+ <div class="page-header">
+    <h3  align="center">Please record the problem by filling the form below</h3>    
+    
+  </div>
+<br>
+ 
 <div class="form-group">
   <label class="col-md-4 control-label">First Name</label>
   <div class="col-md-4 inputGroupContainer">
@@ -53,17 +58,34 @@ a
   </div>
 </div>
 
+<!-- radio checks -->
+ <div class="form-group">
+                        <label class="col-md-4 control-label">Gender</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="yes" /> Male
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="no" /> Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
 <!-- Text input-->
-       <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Highest education</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="education" placeholder="Education" class="form-control"  type="text">
     </div>
   </div>
 </div>
-
 
 <!-- Text input-->
 
@@ -77,6 +99,27 @@ a
   </div>
 </div>
 
+<!-- Text input-->
+  <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+        <label class="col-md-4 control-label">Date</label>
+    <div class="col-md-4 inputGroupContainer">
+            <div class="input-group" id="datePicker">
+                <input type="text" class="form-control" name="date" />
+                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+    </div>
 <!-- Text input-->
 
 <div class="form-group">
@@ -178,38 +221,12 @@ a
 </div>
 </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Website or domain name</label>
-   <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-  <input name="website" placeholder="Website or domain name" class="form-control" type="text">
-    </div>
-  </div>
-</div>
 
-<!-- radio checks -->
- <div class="form-group">
-                        <label class="col-md-4 control-label">Do you have hosting?</label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="yes" /> Yes
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
 
 <!-- Text area -->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Project Description</label>
+  <label class="col-md-4 control-label">Category</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -218,14 +235,33 @@ a
   </div>
 </div>
 
-
-
+<!-- Text area -->
+<div class="form-group">
+  <label class="col-md-4 control-label">Select File</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group"> 
+        
+        <input name="file" id="input-1a" type="file" class="file" data-show-preview="false">
+        </div>
+    </div>
+</div>
+        
+<!-- -->
+<div class="form-group">
+  <label class="col-md-4 control-label">Select File</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group"> 
+<div class="g-recaptcha" data-sitekey="6Leoug8UAAAAAAf2OZV2UKQQ_PjfspycZXoJgirH"></div>
+      </div>
+    </div>
+</div>
+<!-- -->
 
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" >Next <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
 
@@ -234,49 +270,21 @@ a
 </div>
     </div><!-- /.container -->
 
-
 <!-- -->
 
-
-<div class="container">
-
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="mModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Please check your input</h4>
-        </div>
-        <div class="modal-body">
-            <!--**********************-->
-
-
-
-
-            <!-- -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Select Seat</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
-
-
-<!--- -->
-
-
-
-
+<script>
+  $(document).ready(function() {
+    $('#datePicker')
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#eventForm').formValidation('revalidateField', 'date');
+        });
+    }
+</script>
+<!-- -->
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
@@ -308,6 +316,20 @@ a
                 validators: {
                     notEmpty: { message: 'Please supply your email address' },
                     emailAddress: { message: 'Please supply a valid email address' }
+                }
+            },
+            date: {
+                validators: {
+                    notEmpty: { message: 'Please supply the date' },
+                    
+                }
+            },
+            education: {
+                validators: {
+                    notEmpty: { message: 'Please supply your education(eg. BS,MS,Ph.D)' },
+                    education: {
+                       
+                        message: 'Please supply your education(eg. BS,MS,Ph.D)'}
                 }
             },
             phone: {
@@ -357,6 +379,4 @@ a
 //# sourceURL=pen.js
 </script>
 </body>
-
-
 </html>
