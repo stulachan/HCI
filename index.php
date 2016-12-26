@@ -20,8 +20,30 @@ and open the template in the editor.
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+<style>
+    
+    #info {
+    position:center;
+    right: 0px;
+    width: 200px;
+    border: 5px solid #73AD21;
+    padding: 5px;
+    
+}
+</style>
 
+<title>CSC 642 Final Project</title>
 </head>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div id="info">SFSU CS Department<br>CSC 642 Fall 2016 project<br>Form UI Sandeep Tulachan</div>
+       
+      </a>
+    </div>
+  </div>
+</nav>
 <body>
     
 <div class="container">
@@ -31,11 +53,29 @@ and open the template in the editor.
 
 <!-- Form Name -->
  <div class="page-header">
+ 
     <h3  align="center">Please record the problem by filling the form below</h3>    
     
   </div>
 <br>
- 
+
+  <div class="form-group">
+     <label class="col-md-4 control-label"><font color="red">*</font>Required Field</label>
+     <div class="col-md-4 inputGroupContainer">
+     <div class="input-group">
+     </div>
+    </div>
+  </div> 
+
+ <div class="form-group">
+     <label class="col-md-4 control-label"><h4>Personal Information</h4></label>
+     <div class="col-md-4 inputGroupContainer">
+     <div class="input-group">
+     </div>
+    </div>
+  </div> 
+<hr>
+    
 <div class="form-group">
   <label class="col-md-4 control-label">First Name</label>
   <div class="col-md-4 inputGroupContainer">
@@ -49,7 +89,7 @@ and open the template in the editor.
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Last Name</label>
+  <label class="col-md-4 control-label" >Last Name<font color="red">*</font></label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -90,7 +130,7 @@ and open the template in the editor.
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Phone #</label>
+  <label class="col-md-4 control-label">Phone Number<font color="red">*</font></label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -101,7 +141,7 @@ and open the template in the editor.
 
 <!-- Text input-->
   <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>
+  <label class="col-md-4 control-label">E-Mail<font color="red">*</font></label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -112,7 +152,7 @@ and open the template in the editor.
 <!-- Text input-->
 
 <div class="form-group">
-        <label class="col-md-4 control-label">Date</label>
+        <label class="col-md-4 control-label">Date<font color="red">*</font></label>
     <div class="col-md-4 inputGroupContainer">
             <div class="input-group" id="datePicker">
                 <input type="text" class="form-control" name="date" />
@@ -123,7 +163,7 @@ and open the template in the editor.
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Address</label>
+  <label class="col-md-4 control-label">Address<font color="red">*</font></label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -135,11 +175,11 @@ and open the template in the editor.
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">City</label>
+  <label class="col-md-4 control-label">City<font color="red">*</font></label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="city" class="form-control"  type="text">
+  <input name="city" placeholder="City" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -147,7 +187,7 @@ and open the template in the editor.
 <!-- Select Basic -->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">State</label>
+  <label class="col-md-4 control-label">State<font color="red">*</font></label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
@@ -209,26 +249,48 @@ and open the template in the editor.
 </div>
 </div>
 
+
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Zip Code</label>
+  <label class="col-md-4 control-label">Zip Code<font color="red">*</font></label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+        
+  <input name="zip" placeholder="Zip Code" class="form-control"  type="text" size="15">
     </div>
 </div>
 </div>
 
+
+<!--  category  -->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Category<font color="red">*</font></label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="category" class="form-control selectpicker" >
+      <option value=" " >Please select your category</option>
+      <option>Spillage</option>
+      <option>Broken</option>
+      <option>Electric Hazard</option>
+      <option>Broken Pathway</option>
+      <option>Other</option>
+
+    
+    </select>
+  </div>
+</div>
+</div>
 <!-- Text area -->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Category</label>
+  <label class="col-md-4 control-label"></label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-          <textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+          <textarea class="form-control" name="comment" placeholder="Description"></textarea>
   </div>
   </div>
 </div>
@@ -375,6 +437,8 @@ and open the template in the editor.
                     }
                 }
             },
+            category: { validators: { notEmpty: { message: 'Please select your category' } } },
+            
                agree: {
                 validators: {
                     notEmpty: { message: 'You must agree with the terms and conditions'},
@@ -388,7 +452,7 @@ and open the template in the editor.
                         max: 200,
                         message: 'Please enter at least 10 characters and no more than 200'
                     },
-                    notEmpty: { message: 'Please supply a description of your project' }
+                    notEmpty: { message: 'Please supply a description of your problem' }
                 }
             }
         }
